@@ -72,6 +72,7 @@
     <instance objName="obj_conveyor_right" x="468" y="448" name="inst_7F44DD6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_horzline" x="448" y="480" name="inst_7AA5EAC7" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="832" y="224" name="inst_C06AF817" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="32" y="640" name="inst_B2E072B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

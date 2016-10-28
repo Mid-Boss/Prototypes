@@ -23,6 +23,7 @@
     <sprite>sprites\spr_triangle_device2</sprite>
     <sprite>sprites\spr_conveyor_right</sprite>
     <sprite>sprites\spr_conveyor_left</sprite>
+    <sprite>sprites\spr_goal</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -48,6 +49,7 @@
     <object>objects\obj_conveyor_right</object>
     <object>objects\obj_conveyor_left</object>
     <object>objects\obj_triangle_to_circle</object>
+    <object>objects\obj_goal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_level_1</room>
