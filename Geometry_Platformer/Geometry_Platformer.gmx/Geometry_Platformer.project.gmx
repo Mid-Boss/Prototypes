@@ -18,8 +18,10 @@
     <sprite>sprites\spr_switch_green</sprite>
     <sprite>sprites\spr_switch_red</sprite>
     <sprite>sprites\spr_triangle_dispenser</sprite>
+    <sprite>sprites\spr_triangle_to_circle</sprite>
     <sprite>sprites\spr_triangle_device</sprite>
     <sprite>sprites\spr_triangle_device2</sprite>
+    <sprite>sprites\spr_conveyor_right</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -42,8 +44,11 @@
     <object>objects\obj_triangle_dispenser</object>
     <object>objects\obj_triangle_device</object>
     <object>objects\obj_triangle_device2</object>
+    <object>objects\obj_conveyor_right</object>
+    <object>objects\obj_triangle_to_circle</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_level_1</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_square</room>
   </rooms>
