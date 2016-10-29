@@ -24,6 +24,8 @@
     <sprite>sprites\spr_conveyor_right</sprite>
     <sprite>sprites\spr_conveyor_left</sprite>
     <sprite>sprites\spr_goal</sprite>
+    <sprite>sprites\spr_power_bot_R</sprite>
+    <sprite>sprites\spr_power_bot_L</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -50,8 +52,10 @@
     <object>objects\obj_conveyor_left</object>
     <object>objects\obj_triangle_to_circle</object>
     <object>objects\obj_goal</object>
+    <object>objects\obj_power_bot</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room3</room>
     <room>rooms\rm_level_1</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_square</room>
