@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_collision_parent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = 3;
+            <string>horz_spd = 3;
+vert_spd = 3;
 right = true;
 buffer = 0;
 first = true;
@@ -52,9 +53,32 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phy_position_x += spd;
-if buffer &gt; 0
-    buffer -= 1;
+            <string>if place_meeting(x, y, obj_vertline) &amp;&amp; !alarm[0]
+{
+    horz_spd = -horz_spd;
+    alarm[0] = 1;   
+}
+    
+if horz_spd &gt; 0
+    sprite_index = spr_power_bot_R;
+else
+    sprite_index = spr_power_bot_L;
+    
+if (place_meeting(x, y+1, obj_horzline))
+{
+    //image_angle = 0;
+    x += horz_spd;
+}
+else if (place_meeting(x, y, obj_slope))
+{
+    //image_angle = 315;
+    y += vert_spd;
+    x += horz_spd;
+}
+else
+{
+    y += vert_spd;
+}
     
 </string>
           </argument>
@@ -78,12 +102,7 @@ if buffer &gt; 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = -spd;
-buffer = 10;
-if spd &gt; 0
-    sprite_index = spr_power_bot_R;
-else
-    sprite_index = spr_power_bot_L;
+            <string>horz_spd = -horz_spd;
 
 
 </string>
@@ -92,7 +111,7 @@ else
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -103,10 +122,5 @@ else
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>6,0</point>
-    <point>22,0</point>
-    <point>22,32</point>
-    <point>6,32</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
