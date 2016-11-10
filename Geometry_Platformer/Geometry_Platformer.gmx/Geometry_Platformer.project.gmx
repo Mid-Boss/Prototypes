@@ -6,26 +6,34 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_square</sprite>
-    <sprite>sprites\spr_triangle</sprite>
-    <sprite>sprites\spr_circle</sprite>
-    <sprite>sprites\spr_horzline</sprite>
-    <sprite>sprites\spr_vertline</sprite>
-    <sprite>sprites\spr_slope</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_spinner</sprite>
-    <sprite>sprites\sprite7</sprite>
-    <sprite>sprites\spr_switch_green</sprite>
-    <sprite>sprites\spr_switch_red</sprite>
-    <sprite>sprites\spr_triangle_dispenser</sprite>
-    <sprite>sprites\spr_triangle_to_circle</sprite>
-    <sprite>sprites\spr_triangle_device</sprite>
-    <sprite>sprites\spr_triangle_device2</sprite>
-    <sprite>sprites\spr_conveyor_right</sprite>
-    <sprite>sprites\spr_conveyor_left</sprite>
-    <sprite>sprites\spr_goal</sprite>
-    <sprite>sprites\spr_power_bot_R</sprite>
-    <sprite>sprites\spr_power_bot_L</sprite>
+    <sprites name="shapes">
+      <sprite>sprites\spr_triangle_to_circle</sprite>
+      <sprite>sprites\spr_circle</sprite>
+      <sprite>sprites\spr_triangle_device</sprite>
+      <sprite>sprites\spr_triangle</sprite>
+      <sprite>sprites\spr_triangle_device2</sprite>
+      <sprite>sprites\spr_square</sprite>
+    </sprites>
+    <sprites name="robos">
+      <sprite>sprites\spr_power_bot_R</sprite>
+      <sprite>sprites\spr_power_bot_L</sprite>
+      <sprite>sprites\spr_power_dispenser</sprite>
+      <sprite>sprites\spr_cata_dispenser</sprite>
+      <sprite>sprites\spr_cata_bot</sprite>
+    </sprites>
+    <sprites name="misc">
+      <sprite>sprites\spr_slope</sprite>
+      <sprite>sprites\spr_vertline</sprite>
+      <sprite>sprites\spr_horzline</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_spinner</sprite>
+      <sprite>sprites\spr_switch_green</sprite>
+      <sprite>sprites\spr_switch_red</sprite>
+      <sprite>sprites\spr_conveyor_left</sprite>
+      <sprite>sprites\spr_conveyor_right</sprite>
+      <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_power_lifter</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -33,28 +41,48 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\OnGround.gml</script>
+    <script>scripts\scr_pause.gml</script>
+    <script>scripts\scr_increase_bots.gml</script>
+    <script>scripts\scr_fling.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_horzline</object>
-    <object>objects\obj_vertline</object>
-    <object>objects\obj_square</object>
     <object>objects\obj_collision_parent</object>
-    <object>objects\obj_circle</object>
-    <object>objects\obj_slope</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_triangle</object>
-    <object>objects\obj_spinner</object>
-    <object>objects\obj_switch</object>
-    <object>objects\obj_triangle_dispenser</object>
-    <object>objects\obj_triangle_device</object>
-    <object>objects\obj_triangle_device2</object>
-    <object>objects\obj_conveyor_right</object>
-    <object>objects\obj_conveyor_left</object>
-    <object>objects\obj_triangle_to_circle</object>
-    <object>objects\obj_goal</object>
-    <object>objects\obj_power_bot</object>
+    <object>objects\obj_global_variables</object>
+    <objects name="shapes">
+      <object>objects\obj_triangle_device</object>
+      <object>objects\obj_circle</object>
+      <object>objects\obj_triangle</object>
+      <object>objects\obj_triangle_device2</object>
+      <object>objects\obj_square</object>
+      <object>objects\obj_triangle_to_circle</object>
+    </objects>
+    <objects name="robos">
+      <object>objects\obj_robo_dispenser</object>
+      <object>objects\obj_power_bot</object>
+      <object>objects\obj_robo_parent</object>
+      <object>objects\obj_power_lifter</object>
+      <object>objects\obj_lifter</object>
+      <object>objects\obj_cata_bot</object>
+    </objects>
+    <objects name="misc">
+      <object>objects\obj_vertline</object>
+      <object>objects\obj_horzline</object>
+      <object>objects\obj_slope</object>
+      <object>objects\obj_spinner</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_switch</object>
+      <object>objects\obj_conveyor_left</object>
+      <object>objects\obj_goal</object>
+      <object>objects\obj_conveyor_right</object>
+      <object>objects\obj_room_advance</object>
+    </objects>
+    <object>objects\obj_screenshot</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_lvl1</room>
+    <room>rooms\rm_lvl2</room>
+    <room>rooms\rm_lvl3</room>
+    <room>rooms\rm_lvl4</room>
     <room>rooms\room3</room>
     <room>rooms\rm_level_1</room>
     <room>rooms\rm_test</room>
