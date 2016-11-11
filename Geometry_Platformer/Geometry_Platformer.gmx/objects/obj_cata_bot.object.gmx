@@ -26,9 +26,41 @@
           <argument>
             <kind>1</kind>
             <string>horz_spd = 2;
-vert_spd = 4;
+vert_spd = 3;
 go = true;
+flung = false;
+first = true;
+fling_ground = true;
+
 image_speed = 0.2;
+
+v_i = 11;
+t = 0;
+sigma = 55;
+grav = 18;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>fling_ground = false;
 </string>
           </argument>
         </arguments>
@@ -51,7 +83,7 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if go
+            <string>if go &amp;&amp; !flung
 {
     if place_meeting(x, y, obj_vertline) &amp;&amp; !alarm[0]
     {
@@ -82,10 +114,49 @@ image_speed = 0.2;
 }
 else
 {
-    ocollide = collision_rectangle(x, y, x+sprite_width, y+sprite_height, 
-                                    obj_robo_parent, false, true);
-    if ocollide != noone
-        scr_fling(ocollide);
+    num = instance_number(obj_robo_parent);
+    for(cnum = 0; cnum &lt;= num; cnum += 1)
+    {
+        ID = instance_find(obj_robo_parent, cnum);
+        if ID != id
+        {
+            ocollide = collision_point(x-10, y, ID, false, true);
+            if ocollide != noone
+            {
+                ID.flung = true;
+            }
+        }
+    }
+}
+
+if flung
+{
+    if first
+    {
+        alarm[1] = 5;
+        first = false;
+    }
+    
+    x_temp = v_i * t * cos(degtorad(sigma)) + x;
+    y_temp = -(v_i * t * sin(degtorad(sigma))) + (0.5 * grav * sqr(t)) + y;
+    if instance_place(x_temp, y_temp, obj_collision_parent) == noone
+    {
+        x = x_temp;
+        y = y_temp;
+    }
+    else
+        flung = false;
+            
+    t += 1/room_speed;
+    ocollide = instance_place(x, y, obj_collision_parent);
+    if ocollide != noone &amp;&amp; fling_ground = false
+    {
+        // Re-Initialize Variables
+        flung = false;
+        first = true;
+        fling_ground = true;
+        t = 0;
+    }
 }
 </string>
           </argument>

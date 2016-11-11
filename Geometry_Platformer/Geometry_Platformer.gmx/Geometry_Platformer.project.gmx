@@ -34,6 +34,7 @@
       <sprite>sprites\spr_goal</sprite>
       <sprite>sprites\spr_power_lifter</sprite>
     </sprites>
+    <sprite>sprites\spr_reset</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -45,6 +46,9 @@
     <script>scripts\scr_increase_bots.gml</script>
     <script>scripts\scr_fling.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_victory</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_collision_parent</object>
     <object>objects\obj_global_variables</object>
@@ -75,8 +79,10 @@
       <object>objects\obj_goal</object>
       <object>objects\obj_conveyor_right</object>
       <object>objects\obj_room_advance</object>
+      <object>objects\obj_victory_text</object>
     </objects>
     <object>objects\obj_screenshot</object>
+    <object>objects\obj_reset</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_lvl1</room>
